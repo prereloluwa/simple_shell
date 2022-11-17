@@ -75,6 +75,7 @@ void execute(char **commands, int cmd_type)
 				if (execve(commands[0], commands, NULL) == -1)
 				{
 					perror(_getenv("PWD"));
+					exit(2);
 				}
 				break;
 			}
