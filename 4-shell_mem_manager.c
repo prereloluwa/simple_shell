@@ -1,13 +1,12 @@
 #include "shell.h"
 
 /**
- * step1: declare a temp memory with initial bufsize
- * step2: copy from buff to tmp
- * step3: free buff
- * step4: reallocate buff with newsize
- * step5: copy from tmp to buff
- * step6: free tmp
- * step7: return the new buff
+ *_realloc - reallocate a block of memory
+ *@ptr: pointer to previous allocated block
+ *@oldsize: byte size of previous block
+ *@newsize: byte size of new block
+ *
+ *Return: pointer
  */
 
 void *_realloc(void *ptr, int oldsize, int newsize)
@@ -16,23 +15,23 @@ void *_realloc(void *ptr, int oldsize, int newsize)
 	int i, min;
 
 	if (!ptr)
-		return (malloc (newsize));
+		return (malloc(newsize));
 	else if (newsize == oldsize)
 		return (ptr);
 	else if (newsize == 0 && ptr)
 	{
-		free (ptr);
+		free(ptr);
 		return (NULL);
 	}
 	else
 	{
 		min = (newsize < oldsize) ? newsize : oldsize;
-		temp = malloc (newsize);
+		temp = malloc(newsize);
 		if (temp)
 		{
 			for (i = 0; i < min; i++)
 				*((char *) temp + i) = *((char *) ptr + i);
-			free (ptr);
+		free(ptr);
 			return (temp);
 		}
 		else

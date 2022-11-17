@@ -1,14 +1,20 @@
 #include "shell.h"
 
 /**
- * shell process
+ * main - entry point
+ * shell process - shell processes
  * 1. prompt <-----
- * 2. input       |      
+ * 2. input       |
  * 3. parse       |
  * 4. execute -----
+ *
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: 0 on success, 1 on error
  */
 
-int main (int argc __attribute__((unused)), char **argv)
+int main(int argc __attribute__((unused)), char **argv)
 {
 	char *line;
 	char **args;
