@@ -26,7 +26,7 @@ int main(int argc __attribute__((unused)), char **argv)
 
 	while (1)
 	{
-		print("$ ", STDOUT_FILENO);
+		print(" $ ", STDOUT_FILENO);
 		line = _getline();
 
 		if (line == NULL)
