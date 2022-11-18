@@ -34,7 +34,6 @@ int main(int argc __attribute__((unused)), char **argv)
 			if (isatty(STDIN_FILENO))
 				break;
 		}
-
 		args = tokenize(line, DELIM);
 		cmd_type = check_command(args[0]);
 		shell_execute(args, cmd_type);

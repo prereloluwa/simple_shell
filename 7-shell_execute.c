@@ -29,6 +29,8 @@ void shell_execute(char **command, int cmd_type)
 		else
 			wait(&stat);
 	}
+	else
+		execute(command, cmd_type);
 }
 
 /**
@@ -66,7 +68,7 @@ int check_command(char *command)
  */
 void execute(char **commands, int cmd_type)
 {
-	void (*func)(char **command);
+	void (*func)(char **command);  
 
 	switch (cmd_type)
 	{
